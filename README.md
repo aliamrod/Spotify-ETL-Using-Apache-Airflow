@@ -11,7 +11,15 @@ A DAG specifies the dependencies between Tasks, and the order in which to execut
 An Airflow installation generally consists of the following components:
 * A scheduler, which handles both triggering scheduled workflows, and submitting Tasks to the executor to run.
 * An executor, which handles running tasks. In the default Airflow installation, this runs everything _inside_ the scheduler, but most production-suitable executors usually push task execution out to workers.
-* 
+* A webserver, which presents a user interface to inspect, trigger, and debug the behavior of DAGs and tasks.
+* A folder of DAG files, read by the scheduler and executor (and any workers affiliated to the executor).
+* A metadata database, used by the scheduler, executor and webserver to store state.
+
+
+![image](https://github.com/aliamrod/Spotify-ETL-Using-Apache-Airflow/assets/62684338/218b1db2-7bb4-4348-89fc-ffd463aa2b50)
+
+Most executors will generally also introduce other components to let them communicate to their workers - like a task queue - but you can still think of the executor 
+
 
 
 

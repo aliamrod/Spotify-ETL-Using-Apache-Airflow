@@ -15,8 +15,9 @@ An Airflow installation generally consists of the following components:
 * A folder of DAG files, read by the scheduler and executor (and any workers affiliated to the executor).
 * A metadata database, used by the scheduler, executor and webserver to store state.
 
-
+<p align="center">
 ![image](https://github.com/aliamrod/Spotify-ETL-Using-Apache-Airflow/assets/62684338/218b1db2-7bb4-4348-89fc-ffd463aa2b50)
+</p>
 
 Most executors will generally also introduce other components to let them communicate to their workers - like a task queue - but you can still think of the executor 
 

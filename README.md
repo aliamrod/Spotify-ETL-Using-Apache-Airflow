@@ -1,5 +1,6 @@
 # Spotify-ETL-Using-Apache-Airflow
-## Introduction 
+
+## Introduction to Apache Airflow
 Apache Airflow is an open-source workflow management platform for data engineering pipelines. Airflow takes advantage of directed acyclic graphs (DAGs) to manage workflow orchestration. Tasks and dependencies are defined in Python and then Airflow manages the scheduling and execution. DAGs can be run either on a defined schedule (i.e. hourly or daily) or based on external event triggers (i.e. a file appearing in Hive). Previous DAG-based schedulers like Oozie and Azkaban tended to rely on multiple configuration files and file system trees to create a DAG, whereas in Airflow, DAGs can often be written in one Python file.
 
 Airflow is a platform that allows you to run _workflows_. A workflow is represented as a DAG that contains individual pieces of work called 'Tasks', arranged with dependencies and data flows taken into account. 
@@ -15,7 +16,6 @@ An Airflow installation generally consists of the following components:
 * A folder of DAG files, read by the scheduler and executor (and any workers affiliated to the executor).
 * A metadata database, used by the scheduler, executor and webserver to store state.
 
-  <img src="https://github.com/aliamrod/Spotify-ETL-Using-Apache-Airflow/assets/62684338/218b1db2-7bb4-4348-89fc-ffd463aa2b50)>
 
 Airflow itself is agnostic to what you're running - it will orchestrate and run anything, either with high-level support from a provider, or directly as a command using the Shell or Python Operators.
 
@@ -26,7 +26,8 @@ Develop an ETL (Extract-Transform-Load) pipeline utilizing Python and automate w
 ![image](https://github.com/aliamrod/Spotify-ETL-Using-Apache-Airflow/assets/62684338/38271487-e4de-487d-8579-7f8c79d7eb10)
 
 
-## Constructing ETL Pipeline
-Dataset: We will be using Spotify's API. After creating an account, refer to this [page](https://developer.spotify.com/documentation/web-api/reference/get-recently-played?limit=&after=&before=).
+We construct a data pipeline (or in simple words, a data feed) that downloads Spotify data on what songs a Spotify user has listened to in the last 24 hours, and consequently saves that data in a SQLite database. The pipeline will also be scheduled to run daily. After a few months, we will have generated our own private Spotify played tracks historical dataset. 
 
-![image](https://github.com/aliamrod/Spotify-ETL-Using-Apache-Airflow/assets/62684338/e0aed278-2003-4ce9-a424-c0c500479a43)
+
+**First generate your Spotify API access token here: https://developer.spotify.com/console/get-recently-played/**
+

@@ -19,3 +19,7 @@ sudo kill -9 <PID> # Replace <PID> with the process ID using port 8080 (Kill any
 
 # Initiate webserver port
 $ airflow webserver --port 8081
+
+# Adjust log-in information (only if required)
+$ airflow users create --username admin --firstname Admin --lastname User --role Admin --email example_email@gmail.com --password password
+
